@@ -17,7 +17,7 @@ app = FastAPI(
 
 device = 0 if torch.cuda.is_available() else -1
 classifier = pipeline("sentiment-analysis", model=MODEL_NAME, tokenizer=MODEL_NAME, device=device)
-print("Модель успешно загружена!")
+print("Модель была успешно загружена")
 
 class ReviewRequest(BaseModel):
     text: str = Field(..., min_length=1, max_length=512, description="Текст отзыва (1-512 символов)")
